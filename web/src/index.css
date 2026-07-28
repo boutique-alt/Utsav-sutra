@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #5a2f64;
+  --color-primary-dark: #3d1a45;
+  --color-primary-mid: #71327e;
+  --color-primary-light: #8a4a96;
+  --color-accent: #d4af37;
+  --color-accent-light: #f5e28b;
+  --color-accent-dark: #a17a2a;
+  --color-gold-soft: #dcac7f;
+  --color-background: #faf6f0;
+  --color-header: #fdf6e3;
+  --color-background-alt: #f3ebe3;
+  --color-surface: #ffffff;
+  --color-text: #2d2d2d;
+  --color-text-muted: #6b6b6b;
+  --color-border: #e5d9ce;
+  --color-whatsapp: #25d366;
+  --font-display: "Cinzel", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+
+  html.hero-scrubbing {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: clip;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .bg-brand-gradient {
+    background: radial-gradient(circle at center, #71327e 0%, #5a2f64 55%, #3d1a45 100%);
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(180deg, #f5e28b 0%, #d4af37 45%, #a17a2a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .container-page {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 md:py-24;
+  }
+}

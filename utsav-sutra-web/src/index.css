@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7b1e3a;
+  --color-primary-dark: #5c1529;
+  --color-primary-light: #9e2a4d;
+  --color-accent: #c9a84c;
+  --color-accent-light: #e0c878;
+  --color-accent-dark: #a88a3a;
+  --color-background: #fff8f0;
+  --color-background-alt: #f5ede0;
+  --color-surface: #ffffff;
+  --color-text: #2d2d2d;
+  --color-text-muted: #6b6b6b;
+  --color-border: #e8ddd0;
+  --color-whatsapp: #25d366;
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 bg-background font-[family-name:var(--font-body)] text-text antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-[family-name:var(--font-heading)] text-text;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

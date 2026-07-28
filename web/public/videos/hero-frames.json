@@ -1,0 +1,17 @@
+{
+  "mobile": {
+    "frameCount": 144,
+    "pattern": "/videos/hero-frames-mobile/frame_%04d.jpg",
+    "fps": 24,
+    "resolution": "1080x1920"
+  },
+  "desktop": {
+    "frameCount": 192,
+    "pattern": "/videos/hero-frames-desktop/frame_%04d.jpg",
+    "fps": 24,
+    "resolution": "1920x1080"
+  },
+  "breakpointPx": 1024,
+  "master": "/videos/hero-fhd-master.mp4",
+  "source": "/videos/hero-mobile.mp4"
+}
