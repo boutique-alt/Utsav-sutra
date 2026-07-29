@@ -114,7 +114,7 @@ export const services: Service[] = [
   },
   {
     id: 'totto-gifts',
-    title: 'Totto & Luxury Gift',
+    title: 'Wedding tray',
     image: '/images/services/totto-gifts.png',
     layout: 'overlay',
     features: [
