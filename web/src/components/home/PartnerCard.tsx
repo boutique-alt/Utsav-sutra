@@ -1,4 +1,5 @@
 import { InstagramIcon } from '../shared/InstagramIcon'
+import { WebsiteIcon } from '../shared/WebsiteIcon'
 import type { Partner } from '../../data/partners'
 
 interface PartnerCardProps {
@@ -53,23 +54,24 @@ export function PartnerCard({ partner }: PartnerCardProps) {
           ))}
         </ul>
 
-        <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-6">
+        <div className="mt-auto flex items-center gap-4 pt-6">
           <a
             href={partner.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-primary transition hover:text-accent-dark"
+            className="text-primary transition hover:text-accent-dark"
+            aria-label={`Visit ${partner.name} website`}
           >
-            Visit Website
+            <WebsiteIcon size={20} />
           </a>
           <a
             href={partner.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-accent-dark transition hover:text-primary"
+            className="text-accent-dark transition hover:text-primary"
+            aria-label={`${partner.name} on Instagram`}
           >
-            <InstagramIcon size={16} />
-            {partner.handle}
+            <InstagramIcon size={20} />
           </a>
         </div>
       </div>

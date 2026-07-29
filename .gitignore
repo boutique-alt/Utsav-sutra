@@ -22,3 +22,7 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Temp image extraction folders
+**/_extracted*/
+**/bride-temp/

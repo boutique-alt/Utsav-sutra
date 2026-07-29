@@ -3,6 +3,9 @@ export interface Service {
   title: string
   features: string[]
   image?: string
+  images?: string[]
+  layout?: 'split' | 'overlay'
+  overlayReverse?: boolean
   partnerNote?: string
   partnerHandle?: string
   partnerUrl?: string
@@ -14,6 +17,8 @@ export const services: Service[] = [
     id: 'wedding-rituals',
     title: 'Wedding Rituals',
     image: '/images/services/wedding-rituals.png',
+    layout: 'overlay',
+    overlayReverse: true,
     features: [
       'End-to-End Wedding Planning',
       'Wedding Day Coordination',
@@ -26,6 +31,7 @@ export const services: Service[] = [
     id: 'wedding-decor',
     title: 'Wedding Decor',
     image: '/images/services/wedding-decor.png',
+    layout: 'overlay',
     features: [
       'Wedding Décor & Styling',
       'Wedding Backdrop Design',
@@ -40,6 +46,8 @@ export const services: Service[] = [
     id: 'bridal-couture',
     title: 'Bridal Couture',
     image: '/images/services/bridal-couture.png',
+    layout: 'overlay',
+    overlayReverse: true,
     features: [
       'Bridal Sarees',
       'Designer Bridal Blouses',
@@ -49,9 +57,38 @@ export const services: Service[] = [
     ],
   },
   {
+    id: 'groom-haldi-look',
+    title: 'Groom Haldi Look',
+    image: '/images/services/haldi-ceremony-wide.png',
+    layout: 'overlay',
+    overlayReverse: false,
+    features: [
+      'Haldi Ceremony Kurta Sets',
+      'Groom Haldi Outfit Curation',
+      'Sangeet & Mehendi Looks',
+      'Festive Groom Styling',
+      'Outfit & Accessories Consultation',
+    ],
+  },
+  {
+    id: 'groom-bandhgala',
+    title: 'Groom Bandhgala',
+    image: '/images/services/groom-bandhgala-wide.png',
+    layout: 'overlay',
+    overlayReverse: true,
+    features: [
+      'Bandhgala & Jodhpuri Suits',
+      'Indo-Western Outfits',
+      'Designer Groom Blazers',
+      'Custom Groom Styling',
+      'Outfit & Accessories Consultation',
+    ],
+  },
+  {
     id: 'bridal-beauty',
     title: 'Bridal Beauty',
     image: '/images/services/bridal-beauty.png',
+    layout: 'overlay',
     features: [
       'Professional Bridal Makeup',
       'HD & Airbrush Makeup',
@@ -64,6 +101,8 @@ export const services: Service[] = [
     id: 'photography-films',
     title: 'Photography & Films',
     image: '/images/services/photography-films.png',
+    layout: 'overlay',
+    overlayReverse: true,
     features: [
       'Pre-Wedding Shoots',
       'Wedding Photography',
@@ -77,6 +116,7 @@ export const services: Service[] = [
     id: 'totto-gifts',
     title: 'Totto & Luxury Gift',
     image: '/images/services/totto-gifts.png',
+    layout: 'overlay',
     features: [
       'Lehenga Totto Decorations',
       'Jewellery Totto',
@@ -90,6 +130,8 @@ export const services: Service[] = [
     id: 'mehendi-haldi-sangeet',
     title: 'Mehendi, Haldi & Sangeet',
     image: '/images/services/mehendi-haldi-sangeet.png',
+    layout: 'overlay',
+    overlayReverse: true,
     features: [
       'Mehendi Decorations',
       'Haldi Ceremony Planning',
@@ -103,6 +145,7 @@ export const services: Service[] = [
     id: 'catering-hospitality',
     title: 'Catering & Hospitality',
     image: '/images/services/catering-hospitality.png',
+    layout: 'overlay',
     features: [
       'Premium Catering Services',
       'Live Food Counters',
@@ -116,6 +159,8 @@ export const services: Service[] = [
     id: 'bridal-car',
     title: 'Bridal Car Services',
     image: '/images/services/bridal-car.png',
+    layout: 'overlay',
+    overlayReverse: true,
     features: [
       'Bridal Car Decorations',
       'Car on rental basis',
@@ -128,6 +173,7 @@ export const services: Service[] = [
     id: 'wedding-essentials',
     title: 'Wedding Essentials',
     image: '/images/services/wedding-essentials.png',
+    layout: 'overlay',
     features: [
       'Invitation Card Design',
       'Digital Wedding Invitations',
@@ -135,6 +181,20 @@ export const services: Service[] = [
       'Marriage Puja Essentials',
       'Return Gifts & Wedding Favours',
       'Personalized Shopping Assistance',
+    ],
+  },
+  {
+    id: 'groom-sherwani',
+    title: 'Groom Sherwani',
+    image: '/images/services/groom-sherwani-wide.png',
+    layout: 'overlay',
+    overlayReverse: true,
+    features: [
+      'Designer Sherwanis',
+      'Embroidered Sherwani Sets',
+      'Groom Turban & Safa Styling',
+      'Custom Sherwani Tailoring',
+      'Outfit & Accessories Consultation',
     ],
   },
 ]

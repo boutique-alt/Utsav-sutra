@@ -19,7 +19,7 @@ export const partners: Partner[] = [
     url: 'https://instagram.com/boutiquefashionshop',
     website: 'https://www.boutiquefashion.shop/',
     logo: '/images/partners/boutique-fashion.png',
-    logoBg: '#2a1f1a',
+    logoBg: '#ffffff',
     tagline: 'Fashion brand partner',
     description:
       'Curated bridal wear and custom wedding styling — sarees, designer blouses, and ceremony looks planned around your budget and vision.',
@@ -37,7 +37,7 @@ export const partners: Partner[] = [
     url: 'https://instagram.com/pixelsolutiondigitalmarketing',
     website: 'https://www.pixelsolution.in/',
     logo: '/images/partners/pixel-solution.png',
-    logoBg: '#0a0a0a',
+    logoBg: '#ffffff',
     tagline: 'Digital brand partner',
     description:
       'Wedding-focused digital marketing — reels, creatives, and content that tell your story from save-the-date to the big day.',

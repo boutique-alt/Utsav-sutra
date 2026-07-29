@@ -76,4 +76,34 @@
   .section-pad {
     @apply py-16 md:py-24;
   }
+
+  .about-slide-up {
+    animation: about-slide-up 28s linear infinite;
+  }
+
+  .about-slide-down {
+    animation: about-slide-down 28s linear infinite;
+  }
+
+  .about-slide-paused {
+    animation-play-state: paused;
+  }
+
+  @keyframes about-slide-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes about-slide-down {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
 }

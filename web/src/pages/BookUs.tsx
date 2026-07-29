@@ -10,14 +10,21 @@ export function BookUs() {
   const [params] = useSearchParams()
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
-  const [service, setService] = useState('')
+  const [selectedServices, setSelectedServices] = useState<string[]>([])
   const [status, setStatus] = useState<'idle' | 'success'>('idle')
 
   useEffect(() => {
     setName(params.get('name') || '')
     setPhone(params.get('phone') || '')
-    setService(params.get('service') || '')
+    const serviceParam = params.get('service')
+    setSelectedServices(serviceParam ? [serviceParam] : [])
   }, [params])
+
+  const toggleService = (title: string) => {
+    setSelectedServices((prev) =>
+      prev.includes(title) ? prev.filter((item) => item !== title) : [...prev, title],
+    )
+  }
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -28,7 +35,7 @@ export function BookUs() {
       `Consultation request from ${form.get('name')}`,
       `Phone: ${form.get('phone')}`,
       `Email: ${form.get('email') || '-'}`,
-      `Service: ${form.get('service') || '-'}`,
+      `Services: ${selectedServices.join(', ') || '-'}`,
       `Guests: ${params.get('guests') || form.get('guests') || '-'}`,
       `Budget hint: ${params.get('budget') || form.get('budget') || '-'}`,
       `Message: ${form.get('message') || '-'}`,
@@ -125,20 +132,23 @@ export function BookUs() {
             </div>
 
             <div>
-              <label className="mb-1.5 block text-xs font-medium text-primary">Service Interest</label>
-              <select
-                name="service"
-                value={service}
-                onChange={(e) => setService(e.target.value)}
-                className="w-full rounded-xl border border-border px-4 py-3 outline-none focus:border-accent"
-              >
-                <option value="">Select a service</option>
+              <p className="mb-2 text-xs font-medium text-primary">Service Interest</p>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {services.map((s) => (
-                  <option key={s.id} value={s.title}>
+                  <label
+                    key={s.id}
+                    className="flex cursor-pointer items-center gap-2 rounded-xl border border-border bg-background px-3 py-2 text-sm text-text"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={selectedServices.includes(s.title)}
+                      onChange={() => toggleService(s.title)}
+                      className="accent-primary"
+                    />
                     {s.title}
-                  </option>
+                  </label>
                 ))}
-              </select>
+              </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">

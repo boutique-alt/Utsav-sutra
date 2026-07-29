@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { Sparkles } from 'lucide-react'
 import { services } from '../../data/services'
 import { SectionHeading } from '../shared/SectionHeading'
 import { ScrollReveal } from '../shared/ScrollReveal'
@@ -20,28 +19,32 @@ export function ServicesPreview() {
                 to={`/services#${service.id}`}
                 className="group block overflow-hidden rounded-2xl border border-border bg-surface shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg"
               >
-                {service.image ? (
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    loading="lazy"
-                    className="block w-full transition duration-300 group-hover:scale-[1.02]"
-                  />
-                ) : (
-                  <div className="flex aspect-video flex-col items-center justify-center gap-3 bg-primary/5 p-6">
-                    <Sparkles className="text-primary" size={28} />
-                    <h3 className="font-display text-center text-lg text-primary">
+                <div className="relative">
+                  {service.image && (
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      loading="lazy"
+                      className="block w-full transition duration-300 group-hover:scale-[1.02]"
+                    />
+                  )}
+                  <div
+                    className={`absolute inset-y-0 flex w-[52%] flex-col justify-center bg-white/98 px-3 py-3 ${
+                      service.overlayReverse ? 'left-0' : 'right-0'
+                    }`}
+                  >
+                    <h3 className="font-display text-sm uppercase tracking-wide text-primary sm:text-base">
                       {service.title}
                     </h3>
-                    <ul className="space-y-1 text-center">
-                      {service.features.slice(0, 3).map((f) => (
-                        <li key={f} className="text-xs text-text-muted">
+                    <ul className="mt-1.5 space-y-0.5">
+                      {service.features.map((f) => (
+                        <li key={f} className="text-[10px] leading-snug text-primary sm:text-[11px]">
                           {f}
                         </li>
                       ))}
                     </ul>
                   </div>
-                )}
+                </div>
               </Link>
             </ScrollReveal>
           ))}

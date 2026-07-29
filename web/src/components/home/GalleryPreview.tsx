@@ -6,7 +6,7 @@ import { ScrollReveal } from '../shared/ScrollReveal'
 import { Button } from '../shared/Button'
 
 export function GalleryPreview() {
-  const preview = galleryItems.slice(0, 6)
+  const preview = galleryItems.filter((item) => item.category === 'decor')
 
   return (
     <section className="section-pad bg-background-alt">

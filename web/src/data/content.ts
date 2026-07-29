@@ -1,10 +1,11 @@
 export const galleryCategories = [
   { id: 'all', label: 'All' },
+  { id: 'groom', label: 'Groom' },
   { id: 'garland', label: 'Garland' },
   { id: 'decor', label: 'Décor' },
 ] as const
 
-export type GalleryCategory = 'all' | 'garland' | 'decor'
+export type GalleryCategory = 'all' | 'groom' | 'garland' | 'decor'
 
 export interface GalleryImage {
   src: string
@@ -27,6 +28,27 @@ export interface GalleryItem {
 }
 
 export const galleryAlbums: GalleryAlbum[] = [
+  {
+    id: 'groom-sherwani',
+    title: 'Groom Sherwani',
+    category: 'groom',
+    cover: '/images/gallery/groom-sherwani.png',
+    images: [{ src: '/images/gallery/groom-sherwani.png', alt: 'Groom in white sherwani' }],
+  },
+  {
+    id: 'groom-bandhgala',
+    title: 'Groom Bandhgala',
+    category: 'groom',
+    cover: '/images/gallery/groom-bandhgala.png',
+    images: [{ src: '/images/gallery/groom-bandhgala.png', alt: 'Groom in black bandhgala suit' }],
+  },
+  {
+    id: 'haldi-ceremony',
+    title: 'Haldi Ceremony',
+    category: 'groom',
+    cover: '/images/gallery/haldi-ceremony.png',
+    images: [{ src: '/images/gallery/haldi-ceremony.png', alt: 'Haldi ceremony groom' }],
+  },
   {
     id: 'haldi-decor',
     title: 'Haldi Décor',

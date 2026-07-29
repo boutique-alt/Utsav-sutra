@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { galleryAlbums, galleryCategories, type GalleryAlbum, type GalleryCategory } from '../data/content'
 import { siteConfig } from '../data/site'
 import { Button } from '../components/shared/Button'
@@ -6,8 +7,14 @@ import { GalleryCard } from '../components/gallery/GalleryCard'
 import { GalleryLightbox } from '../components/gallery/GalleryLightbox'
 import { cn } from '../lib/utils'
 
+function isGalleryCategory(value: string | null): value is GalleryCategory {
+  return galleryCategories.some((cat) => cat.id === value)
+}
+
 export function Gallery() {
-  const [filter, setFilter] = useState<GalleryCategory>('all')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const categoryParam = searchParams.get('category')
+  const filter: GalleryCategory = isGalleryCategory(categoryParam) ? categoryParam : 'all'
   const [activeAlbum, setActiveAlbum] = useState<GalleryAlbum | null>(null)
   const [activeIndex, setActiveIndex] = useState(0)
 
@@ -16,6 +23,14 @@ export function Gallery() {
       filter === 'all' ? galleryAlbums : galleryAlbums.filter((album) => album.category === filter),
     [filter],
   )
+
+  const setFilter = (category: GalleryCategory) => {
+    if (category === 'all') {
+      setSearchParams({}, { replace: true })
+      return
+    }
+    setSearchParams({ category }, { replace: true })
+  }
 
   const openAlbum = (album: GalleryAlbum) => {
     setActiveAlbum(album)
