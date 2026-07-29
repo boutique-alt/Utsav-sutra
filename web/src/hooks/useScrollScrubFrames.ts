@@ -19,13 +19,19 @@ function clamp(n: number, min = 0, max = 1) {
   return Math.min(max, Math.max(min, n))
 }
 
-async function loadFrameSet(frameSet: HeroFrameSet) {
+const FRAME_BATCH_SIZE = 8
+
+async function loadFrameSet(
+  frameSet: HeroFrameSet,
+  onFirstFrame?: (frames: HTMLImageElement[]) => void,
+) {
   const frames: HTMLImageElement[] = new Array(frameSet.frameCount)
 
   const loadOne = (index: number) =>
     new Promise<void>((resolve) => {
       const image = new Image()
       image.decoding = 'async'
+      image.fetchPriority = index === 0 ? 'high' : 'low'
       image.src = frameSet.src(index)
       image.onload = () => {
         frames[index] = image
@@ -35,9 +41,15 @@ async function loadFrameSet(frameSet: HeroFrameSet) {
     })
 
   await loadOne(0)
-  await Promise.all(
-    Array.from({ length: frameSet.frameCount - 1 }, (_, i) => loadOne(i + 1)),
-  )
+  onFirstFrame?.(frames)
+
+  for (let i = 1; i < frameSet.frameCount; i += FRAME_BATCH_SIZE) {
+    const end = Math.min(i + FRAME_BATCH_SIZE, frameSet.frameCount)
+    await Promise.all(
+      Array.from({ length: end - i }, (_, offset) => loadOne(i + offset)),
+    )
+  }
+
   return frames
 }
 
@@ -106,7 +118,13 @@ export function useScrollScrubFrames(
 
       setIsReady(false)
       lastExactFrame.current = -1
-      const frames = await loadFrameSet(frameSet)
+      const frames = await loadFrameSet(frameSet, (partialFrames) => {
+        framesRef.current = partialFrames
+        frameCountRef.current = frameSet.frameCount
+        activeSetRef.current = setKey
+        setIsReady(true)
+        draw(progressRef.current, true)
+      })
       framesRef.current = frames
       frameCountRef.current = frameSet.frameCount
       activeSetRef.current = setKey

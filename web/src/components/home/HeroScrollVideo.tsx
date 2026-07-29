@@ -49,9 +49,18 @@ export function HeroScrollVideo() {
         }
       >
         <div className="relative h-full w-full overflow-hidden">
-          <HeroScrollCanvas ref={canvasRef} />
+          {!isReady && (
+            <img
+              src="/images/hero-bg.png"
+              alt=""
+              aria-hidden
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover object-top"
+            />
+          )}
 
-          {!isReady && <div className="absolute inset-0 bg-primary-dark" aria-hidden />}
+          <HeroScrollCanvas ref={canvasRef} />
 
           <div
             className="absolute inset-0 bg-gradient-to-r from-primary-dark/75 via-primary-dark/35 to-transparent max-md:opacity-45"
