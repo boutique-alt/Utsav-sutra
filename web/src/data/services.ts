@@ -59,7 +59,7 @@ export const services: Service[] = [
   {
     id: 'groom-haldi-look',
     title: 'Groom Haldi Look',
-    image: '/images/services/haldi-ceremony-wide.png',
+    image: '/images/services/updated/18.png',
     layout: 'overlay',
     overlayReverse: false,
     features: [
@@ -73,7 +73,7 @@ export const services: Service[] = [
   {
     id: 'groom-bandhgala',
     title: 'Groom Bandhgala',
-    image: '/images/services/groom-bandhgala-wide.png',
+    image: '/images/services/updated/17.png',
     layout: 'overlay',
     overlayReverse: true,
     features: [
@@ -186,7 +186,7 @@ export const services: Service[] = [
   {
     id: 'groom-sherwani',
     title: 'Groom Sherwani',
-    image: '/images/services/groom-sherwani-wide.png',
+    image: '/images/services/updated/19.png',
     layout: 'overlay',
     overlayReverse: true,
     features: [

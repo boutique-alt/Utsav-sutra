@@ -36,9 +36,12 @@ export function ServicesPreview() {
                     <h3 className="font-display text-sm uppercase tracking-wide text-primary sm:text-base">
                       {service.title}
                     </h3>
-                    <ul className="mt-1.5 space-y-0.5">
+                    <ul className="mt-1.5 space-y-1">
                       {service.features.map((f) => (
-                        <li key={f} className="text-[10px] leading-snug text-primary sm:text-[11px]">
+                        <li
+                          key={f}
+                          className="flex gap-2 text-[10px] leading-snug text-primary before:mt-1 before:h-1 before:w-1 before:shrink-0 before:rounded-full before:bg-accent before:content-[''] sm:text-[11px]"
+                        >
                           {f}
                         </li>
                       ))}
