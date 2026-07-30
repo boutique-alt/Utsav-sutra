@@ -25,7 +25,7 @@ export function HeroScrollContent() {
               size="lg"
               className="border-white/70 text-white hover:bg-white hover:text-primary max-md:w-full"
             >
-              Explore Services
+              Explore Offerings
             </Button>
           </div>
         </div>

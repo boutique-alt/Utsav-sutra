@@ -1,7 +1,7 @@
 import { siteConfig } from '../../data/site'
 
 const stats = [
-  { value: '12+', label: 'Services' },
+  { value: '12+', label: 'Offerings' },
   { value: String(siteConfig.founded), label: 'Founded' },
   { value: 'We Plan.', label: 'You Celebrate.' },
 ]

@@ -35,7 +35,7 @@ export function BookUs() {
       `Consultation request from ${form.get('name')}`,
       `Phone: ${form.get('phone')}`,
       `Email: ${form.get('email') || '-'}`,
-      `Services: ${selectedServices.join(', ') || '-'}`,
+      `Offerings: ${selectedServices.join(', ') || '-'}`,
       `Guests: ${params.get('guests') || form.get('guests') || '-'}`,
       `Budget hint: ${params.get('budget') || form.get('budget') || '-'}`,
       `Message: ${form.get('message') || '-'}`,
@@ -132,7 +132,7 @@ export function BookUs() {
             </div>
 
             <div>
-              <p className="mb-2 text-xs font-medium text-primary">Service Interest</p>
+              <p className="mb-2 text-xs font-medium text-primary">Offering Interest</p>
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {services.map((s) => (
                   <label

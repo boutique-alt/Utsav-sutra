@@ -7,7 +7,7 @@ export function Services() {
     <>
       <section className="bg-brand-gradient py-16 md:py-20">
         <div className="container-page text-center">
-          <h1 className="font-display text-4xl text-accent md:text-5xl">Our Services</h1>
+          <h1 className="font-display text-4xl text-accent md:text-5xl">Our Offerings</h1>
         </div>
       </section>
 

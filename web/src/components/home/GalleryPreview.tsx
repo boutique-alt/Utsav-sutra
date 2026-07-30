@@ -26,7 +26,7 @@ export function GalleryPreview() {
                   src={item.src}
                   alt={item.title}
                   loading="lazy"
-                  className="h-full w-full object-contain transition duration-300 group-hover:scale-105"
+                  className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                 />
               </Link>
             </ScrollReveal>

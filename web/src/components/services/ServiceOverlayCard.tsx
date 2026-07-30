@@ -22,7 +22,7 @@ export function ServiceOverlayCard({ service }: ServiceOverlayCardProps) {
     >
       <div className="relative">
         {imgs.length > 0 ? (
-          <div className={`relative w-full ${imgs.length > 1 ? 'aspect-[16/9] sm:aspect-[2/1]' : ''}`}>
+          <div className="relative aspect-[16/9] w-full sm:aspect-[2/1]">
             {imgs.map((src, i) => (
               <img
                 key={src}
@@ -30,7 +30,7 @@ export function ServiceOverlayCard({ service }: ServiceOverlayCardProps) {
                 alt=""
                 loading="lazy"
                 aria-hidden
-                className={`transition-opacity duration-700 ${imgs.length > 1 ? 'absolute inset-0 h-full w-full object-cover object-top' : 'block w-full'} ${i === idx ? 'opacity-100' : 'opacity-0'}`}
+                className={`absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-700 ${i === idx ? 'opacity-100' : 'opacity-0'}`}
               />
             ))}
           </div>

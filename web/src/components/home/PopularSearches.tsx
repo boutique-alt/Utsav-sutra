@@ -16,7 +16,7 @@ const POPULAR_SERVICE_IDS = [
   'bridal-beauty',
   'photography-films',
   'wedding-rituals',
-  'totto-gifts',
+  'wedding-tray',
   'bridal-car',
   'groom-bandhgala',
   'groom-haldi-look',

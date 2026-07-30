@@ -35,7 +35,7 @@ export function Hero() {
                 size="lg"
                 className="border-white/70 text-white hover:bg-white hover:text-primary"
               >
-                Explore Services
+                Explore Offerings
               </Button>
             </div>
           </div>

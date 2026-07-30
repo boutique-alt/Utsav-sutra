@@ -27,12 +27,12 @@ export function PopularSearchCard({
             'transition duration-300 group-hover:scale-105',
             isBannerCrop
               ? 'absolute top-0 h-full w-[200%] max-w-none object-cover'
-              : 'h-full w-full object-cover',
+              : 'absolute inset-0 h-full w-full object-cover',
           )}
           style={isBannerCrop ? { left: imageFocus === 'right' ? '-100%' : '0' } : undefined}
         />
       </div>
-      <p className="mt-2.5 text-sm leading-snug text-primary transition group-hover:text-accent-dark">
+      <p className="mt-2.5 line-clamp-2 min-h-[2.5rem] text-sm leading-snug text-primary transition group-hover:text-accent-dark">
         {title}
       </p>
     </Link>

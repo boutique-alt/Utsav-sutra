@@ -38,7 +38,7 @@ export function QuoteForm() {
       `Date: ${data.get('eventDate') || '-'}`,
       `Location: ${data.get('location') || '-'}`,
       `Budget: ${data.get('budget') || '-'}`,
-      `Services: ${selectedServices.join(', ') || '-'}`,
+      `Offerings: ${selectedServices.join(', ') || '-'}`,
       `Details: ${data.get('message') || '-'}`,
     ].join('\n')
 
@@ -86,7 +86,7 @@ export function QuoteForm() {
           </div>
 
           <div>
-            <p className="mb-2 text-xs font-medium text-accent-light">Services Required</p>
+            <p className="mb-2 text-xs font-medium text-accent-light">Offerings Required</p>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {services.map((s) => (
                 <label

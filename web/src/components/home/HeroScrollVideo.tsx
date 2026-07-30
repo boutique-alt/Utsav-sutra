@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { useMotionValueEvent, useTransform } from 'framer-motion'
+import { motion, useMotionValueEvent, useTransform } from 'framer-motion'
 import { useScrollScrubFrames } from '../../hooks/useScrollScrubFrames'
 import { Hero } from './Hero'
 import { HeroScrollCanvas } from './HeroScrollCanvas'
@@ -14,6 +14,7 @@ export function HeroScrollVideo() {
   const { scrollYProgress, isReady } = useScrollScrubFrames(containerRef, canvasRef)
 
   const hintOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0])
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.95], [1, 0])
   const [showHint, setShowHint] = useState(true)
 
   useMotionValueEvent(scrollYProgress, 'change', (value) => {
@@ -71,7 +72,9 @@ export function HeroScrollVideo() {
             aria-hidden
           />
 
-          <HeroScrollContent />
+          <motion.div className="absolute inset-0" style={{ opacity: contentOpacity }}>
+            <HeroScrollContent />
+          </motion.div>
           <HeroScrollHint visible={showHint && !videoDone} />
         </div>
       </section>

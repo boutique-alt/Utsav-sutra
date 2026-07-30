@@ -9,7 +9,7 @@ export function ServicesPreview() {
     <section id="services" className="section-pad bg-background-alt">
       <div className="container-page">
         <ScrollReveal>
-          <SectionHeading eyebrow="Utsav Sutra" title="Our Services" />
+          <SectionHeading eyebrow="Utsav Sutra" title="Our Offerings" />
         </ScrollReveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -19,13 +19,13 @@ export function ServicesPreview() {
                 to={`/services#${service.id}`}
                 className="group block overflow-hidden rounded-2xl border border-border bg-surface shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg"
               >
-                <div className="relative">
+                <div className="relative aspect-[16/9] sm:aspect-[2/1]">
                   {service.image && (
                     <img
                       src={service.image}
                       alt={service.title}
                       loading="lazy"
-                      className="block w-full transition duration-300 group-hover:scale-[1.02]"
+                      className="absolute inset-0 h-full w-full object-cover object-top transition duration-300 group-hover:scale-[1.02]"
                     />
                   )}
                   <div
@@ -55,7 +55,7 @@ export function ServicesPreview() {
 
         <div className="mt-10 text-center">
           <Button to="/services" variant="secondary">
-            View All Services
+            View All Offerings
           </Button>
         </div>
       </div>

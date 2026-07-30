@@ -7,7 +7,7 @@ export function OverviewStrip() {
     <section className="section-pad bg-background">
       <div className="container-page">
         <ScrollReveal>
-          <SectionHeading title="Our Services" />
+          <SectionHeading title="Our Offerings" />
         </ScrollReveal>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           {overviewServices.map((item) => (
