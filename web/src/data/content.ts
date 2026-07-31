@@ -47,14 +47,22 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'Haldi Ceremony',
     category: 'groom',
     cover: '/images/gallery/haldi-ceremony.png',
-    images: [{ src: '/images/gallery/haldi-ceremony.png', alt: 'Haldi ceremony groom' }],
+    images: [
+      { src: '/images/gallery/haldi-ceremony.png', alt: 'Haldi ceremony groom' },
+      { src: '/images/gallery/haldi-ceremony-2.png', alt: 'Couple at Haldi with marigold backdrop' },
+      { src: '/images/gallery/haldi-ceremony-3.png', alt: 'Haldi celebration in lotus basin' },
+    ],
   },
   {
     id: 'haldi-decor',
     title: 'Haldi Décor',
     category: 'decor',
     cover: '/images/gallery/haldi-decor.png',
-    images: [{ src: '/images/gallery/haldi-decor.png', alt: 'Haldi décor setup' }],
+    images: [
+      { src: '/images/gallery/haldi-decor.png', alt: 'Haldi décor setup' },
+      { src: '/images/gallery/haldi-decor-2.png', alt: 'Haldi backdrop with marigold and terracotta pots' },
+      { src: '/images/gallery/haldi-decor-3.png', alt: 'Haldi hanging umbrellas and marigold décor' },
+    ],
   },
   {
     id: 'mehendi-decor',
@@ -64,11 +72,50 @@ export const galleryAlbums: GalleryAlbum[] = [
     images: [{ src: '/images/gallery/mehendi-decor.png', alt: 'Mehendi décor' }],
   },
   {
+    id: 'wedding-essentials',
+    title: 'Wedding Essentials',
+    category: 'decor',
+    cover: '/images/gallery/wedding-essentials-1.png',
+    images: [
+      { src: '/images/gallery/wedding-essentials-1.png', alt: 'Royal blue velvet wedding invitation scroll' },
+      { src: '/images/gallery/wedding-essentials-2.png', alt: 'Bengali wedding ritual with mangal ghat' },
+      { src: '/images/gallery/wedding-essentials-3.png', alt: 'Shola mukut, shakha pola and wedding essentials' },
+      { src: '/images/gallery/wedding-essentials-4.png', alt: 'Traditional Bengali groom topor' },
+    ],
+  },
+  {
     id: 'wedding-headgear',
     title: 'Wedding Headgear',
     category: 'decor',
     cover: '/images/gallery/wedding-headgear.png',
-    images: [{ src: '/images/gallery/wedding-headgear.png', alt: 'Wedding headgear' }],
+    images: [
+      { src: '/images/gallery/wedding-headgear.png', alt: 'Wedding headgear' },
+      { src: '/images/gallery/wedding-essentials-4.png', alt: 'Traditional Bengali groom topor' },
+    ],
+  },
+  {
+    id: 'catering-hospitality',
+    title: 'Catering & Hospitality',
+    category: 'decor',
+    cover: '/images/gallery/catering-1.png',
+    images: [
+      { src: '/images/gallery/catering-1.png', alt: 'Gold buffet station with floral overhead décor' },
+      { src: '/images/gallery/catering-2.png', alt: 'Luxury puchka live counter with crystal chandeliers' },
+      { src: '/images/gallery/catering-3.png', alt: 'Outdoor buffet with ornate silver chafing dishes' },
+      { src: '/images/gallery/catering-4.png', alt: 'Banquet hall buffet with garnished rice and desserts' },
+    ],
+  },
+  {
+    id: 'car-decoration',
+    title: 'Car Decoration',
+    category: 'decor',
+    cover: '/images/gallery/car-decoration-1.png',
+    images: [
+      { src: '/images/gallery/car-decoration-1.png', alt: 'White car with red and white floral heart décor' },
+      { src: '/images/gallery/car-decoration-2.png', alt: 'White SUV with pink gerbera heart car décor' },
+      { src: '/images/gallery/car-decoration-3.png', alt: 'Mercedes wedding car with pink ribbon and floral décor' },
+      { src: '/images/gallery/car-decoration-4.png', alt: 'Vintage red Ford with white floral hood décor' },
+    ],
   },
   {
     id: 'hand-painted',
@@ -94,7 +141,13 @@ export const galleryAlbums: GalleryAlbum[] = [
     title: 'Wedding Tray Décor',
     category: 'decor',
     cover: '/images/gallery/wedding-tray-decor.png',
-    images: [{ src: '/images/gallery/wedding-tray-decor.png', alt: 'Wedding tray décor' }],
+    images: [
+      { src: '/images/gallery/wedding-tray-decor.png', alt: 'Wedding tray décor' },
+      { src: '/images/gallery/wedding-tray-2.png', alt: 'Personalized yellow Haldi ceremony tray' },
+      { src: '/images/gallery/wedding-tray-3.png', alt: 'Red and gold bangle ceremony stand' },
+      { src: '/images/gallery/wedding-tray-4.png', alt: 'Emerald green Mehendi tray with henna cones' },
+      { src: '/images/gallery/wedding-tray-5.png', alt: 'Gold and burgundy wedding ring platter' },
+    ],
   },
   {
     id: 'samples-garland',
@@ -102,6 +155,29 @@ export const galleryAlbums: GalleryAlbum[] = [
     category: 'garland',
     cover: '/images/gallery/samples-garland.png',
     images: [{ src: '/images/gallery/samples-garland.png', alt: 'Garland samples collection' }],
+  },
+  {
+    id: 'photography-films',
+    title: 'Photography & Films',
+    category: 'decor',
+    cover: '/images/gallery/photography-films-1.png',
+    images: [
+      { src: '/images/gallery/photography-films-1.png', alt: 'Bengali bride and groom wedding portrait with topor' },
+      { src: '/images/gallery/photography-films-2.png', alt: 'Couple portrait under wedding chandeliers' },
+      { src: '/images/gallery/photography-films-3.png', alt: 'Formal bridal stage portrait in red and cream' },
+    ],
+  },
+  {
+    id: 'wedding-decorations',
+    title: 'Wedding Decorations',
+    category: 'decor',
+    cover: '/images/gallery/wedding-decor-1.png',
+    images: [
+      { src: '/images/gallery/wedding-decor-1.png', alt: 'Traditional stage with red florals and painted pillars' },
+      { src: '/images/gallery/wedding-decor-2.png', alt: 'Yellow and white stage with floral circular arch' },
+      { src: '/images/gallery/wedding-decor-3.png', alt: 'Gold arched stage with crystal chandeliers' },
+      { src: '/images/gallery/wedding-decor-4.png', alt: 'Outdoor mandap with red rose aisle and candles' },
+    ],
   },
   {
     id: 'samples-decor',

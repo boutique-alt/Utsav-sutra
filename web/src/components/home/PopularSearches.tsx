@@ -23,12 +23,17 @@ const POPULAR_SERVICE_IDS = [
 ] as const
 
 const POPULAR_SEARCH_IMAGES: Partial<Record<(typeof POPULAR_SERVICE_IDS)[number], string>> = {
+  'wedding-essentials': '/images/gallery/wedding-essentials-1.png',
+  'bridal-car': '/images/gallery/car-decoration-1.png',
+  'wedding-decor': '/images/gallery/wedding-decor-1.png',
+  'photography-films': '/images/gallery/photography-films-1.png',
+  'wedding-tray': '/images/gallery/wedding-tray-2.png',
+  'catering-hospitality': '/images/gallery/catering-1.png',
   'groom-sherwani': '/images/gallery/groom-sherwani.png',
   'groom-bandhgala': '/images/gallery/groom-bandhgala.png',
   'groom-haldi-look': '/images/gallery/haldi-ceremony.png',
   'mehendi-haldi-sangeet': '/images/gallery/mehendi-decor.png',
   'bridal-couture': '/images/about/bride/4.png',
-  'photography-films': '/images/about/bride/1.png',
   'wedding-rituals': '/images/about/bride/3.png',
 }
 

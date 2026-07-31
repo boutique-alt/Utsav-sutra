@@ -11,7 +11,10 @@ export function HeroScrollVideo() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
   const [videoDone, setVideoDone] = useState(false)
-  const { scrollYProgress, isReady } = useScrollScrubFrames(containerRef, canvasRef)
+  const { scrollYProgress, isReady, setProgress } = useScrollScrubFrames(
+    containerRef,
+    canvasRef,
+  )
 
   const hintOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0])
   const contentOpacity = useTransform(scrollYProgress, [0, 0.95], [1, 0])
@@ -34,6 +37,15 @@ export function HeroScrollVideo() {
   useEffect(() => {
     return hintOpacity.on('change', (value) => setShowHint(value > 0.05))
   }, [hintOpacity])
+
+  const skipToSection = (id: string) => {
+    setProgress(1)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      })
+    })
+  }
 
   if (prefersReducedMotion) {
     return <Hero />
@@ -73,7 +85,7 @@ export function HeroScrollVideo() {
           />
 
           <motion.div className="absolute inset-0" style={{ opacity: contentOpacity }}>
-            <HeroScrollContent />
+            <HeroScrollContent onExplore={() => skipToSection('services')} />
           </motion.div>
           <HeroScrollHint visible={showHint && !videoDone} />
         </div>

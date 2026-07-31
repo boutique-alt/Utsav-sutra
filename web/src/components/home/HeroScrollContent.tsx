@@ -1,7 +1,11 @@
 import { siteConfig } from '../../data/site'
 import { Button } from '../shared/Button'
 
-export function HeroScrollContent() {
+interface HeroScrollContentProps {
+  onExplore?: () => void
+}
+
+export function HeroScrollContent({ onExplore }: HeroScrollContentProps) {
   return (
     <div className="absolute inset-0 grid lg:grid-cols-2">
       <div className="flex w-full items-center px-6 py-10 pt-24 max-md:items-end max-md:px-5 max-md:pb-24 max-md:pt-8 sm:px-10 sm:pt-28 md:py-16 md:pt-32 lg:px-14 xl:px-20">
@@ -20,7 +24,7 @@ export function HeroScrollContent() {
               Book Free Consultation
             </Button>
             <Button
-              href="#services"
+              onClick={onExplore}
               variant="outline"
               size="lg"
               className="border-white/70 text-white hover:bg-white hover:text-primary max-md:w-full"

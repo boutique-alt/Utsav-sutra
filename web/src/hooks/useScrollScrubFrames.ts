@@ -236,5 +236,5 @@ export function useScrollScrubFrames(
     }
   }, [draw, setProgress])
 
-  return { scrollYProgress, isReady, progressRef }
+  return { scrollYProgress, isReady, progressRef, setProgress }
 }
